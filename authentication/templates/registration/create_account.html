@@ -1,0 +1,15 @@
+{% extends 'base/auth-layout.html' %}
+{% load static %} 
+{% block title %}create-account{% endblock title%} 
+{% block content %}
+<form action="#" method="post" class="mx-auto w-50 border">
+	<h4 class="text-center">Sign up</h4>
+	{% csrf_token %} {{form.as_p}}
+
+	<button type="submit" class="btn btn-primary mt-5">sign up</button>
+	<p>
+		Have an account?
+		<a class="form-text mt-5 text-dark text-bold" href="/login">login</a>
+	</p>
+</form>
+{% endblock content %}

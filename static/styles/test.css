@@ -1,0 +1,113 @@
+body{
+    background: #fff;
+    font-family: montserrat;
+}
+.testimonial{
+    margin-top: 40px;
+}
+.testimonial .section-heading{
+    margin-bottom: 20px;
+}
+.section-heading h2{
+    text-align: center;
+    font-family: allura;
+    font-size: 60px;
+    color:dark;
+}
+.testimonial .testimonial-item{
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    position: relative;
+    padding: 50px 30px 70px 30px;
+    background: linen;
+}
+.testimonial .testimonial-item img{
+    border-radius: 50%;
+    width: 200px;
+    display: none;
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    border: 10px double darkorange;
+}
+.testimonial .testimonial-item .qoute-icon i{
+    position: absolute;
+    left: 50px;
+    bottom: 40px;
+    color: darkorange;
+    font-size: 48px;
+    opacity: 0;
+}
+.testimonial .testimonial-item p{
+    margin-top: 0;
+    font-family: italic;
+    font-weight: 500;
+    color: #000;
+
+}
+.testimonial .testimonial-item h4{
+    font-size: 20px;
+    font-weight: 700px;
+    margin-bottom: 0;
+    margin-top: 20px;
+
+}
+.testimonial .testimonial-item span.position{
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    float: left;
+}
+.testimonial .testimonial-item ul.stars{
+    right: 30px;
+    bottom: 60px;
+    position: absolute;
+}
+.testimonial .testimonial-item ul.stars li{
+    display: inline-block;
+
+
+}
+.testimonial .testimonial-item ul.stars li i{
+    font-size: 14px;
+    color: darkorange;
+}
+.qoute-icon{
+    margin-top: 20px;
+}
+.testimonial .owl-dots{
+    margin-top: 0;
+    text-align: center;
+}
+.testimonial .owl-dots .owl-dot{
+    margin: 0 5px;
+    width: 14px;
+    height: 14px;
+    background-color: #d4d4d4;
+    transition: all .5s;
+}
+.testimonial .owl-dots .active{
+    height: 14px;
+    background-color: transparent;
+    border: 2px solid darkorange;
+}
+@media (min-width: 992px){
+    .testimonial{
+        margin-top: 80px;
+    }
+    .testimonial .section-heading{
+        margin-bottom: 50px;
+    }
+    .testimonial .testimonial-item{
+        padding: 50px 30px 70px 200px;
+        margin: 30px;
+    }
+    .testimonial .testimonial-item img{
+        display: -webkit-inline-box;
+        display: inline-flex;
+    }
+    .testimonial .testimonial-item .qoute-icon i{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends 'base/auth-layout.html' %}
+
+{% block title %}login{% endblock title %}
+{% block content %}
+<form action="#" method="post" class="mx-auto">
+	{% csrf_token %} {{form.as_p}}
+
+	<button type="submit" class="btn btn-primary mt-5">Login</button>
+	<p>
+		Don't have an account?
+		<a href="{% url 'auth:create-account' %}">Create account</a>
+	</p>
+</form>
+{% endblock content %}
