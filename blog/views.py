@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import PaperForm
 from .models import Paper
@@ -16,7 +17,13 @@ def create_blog(request):
         paper.slug = slugify(paper.title)
 
         paper.save()
+
+        messages.success(request, "Blog created successfully.", extra_tags="success")
         form = PaperForm()
+
+    # else:
+    #     messages.error(
+    #         request, "Sorry, blog not created! Please enter valid inputs", extra_tags="danger")
 
     context = {"form": form}
 
