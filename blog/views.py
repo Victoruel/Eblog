@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
 
 from .forms import PaperForm
 from .models import Paper
 
-# Blog_Create view
+
+@login_required()
 def create_blog(request):
     form = PaperForm(request.POST, request.FILES or None)
 
@@ -22,9 +24,9 @@ def create_blog(request):
 
 
 # Blog_list view
+@login_required()
 def blog_list(request):
     blogs = Paper.objects.all()
-
 
     context = {
         "blogs": blogs
@@ -34,13 +36,14 @@ def blog_list(request):
 
 
 # Blog_detail view
+@login_required()
 def blog_detail(request, blog_slug):
     blogs = Paper.objects.all()
-    active_blog = get_object_or_404(Paper, slug = blog_slug)
-    
+    active_blog = get_object_or_404(Paper, slug=blog_slug)
+
     context = {
         "blogs": blogs,
         "active_blog": active_blog
-    }   
+    }
 
     return render(request, "blog/blog_detail.html", context)

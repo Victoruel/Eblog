@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
+
 from .forms import HelpRequestForm
 from .models import HelpRequest
 from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING
@@ -10,6 +13,7 @@ def index(request):
     return render(request, "base/home.html", context)
 
 
+@login_required()
 def price_calculator(request):
     form = HelpRequestForm(request.POST or None)
 
