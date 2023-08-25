@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import HelpRequestForm
 from .models import HelpRequest
-from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING
+from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING, PRICE_PER_DAY
 
 
 def index(request):
@@ -24,8 +24,9 @@ def price_calculator(request):
         study_level = help_request.study_level
         days = help_request.days
 
+
         help_request.price = (STUDY_LEVEL_PRICING.get(study_level) +
-                              PAPER_TYPE_PRICING.get(paper_type)) * 1/(days / 2)
+                              PAPER_TYPE_PRICING.get(paper_type)) + PRICE_PER_DAY.get(str(days))
         help_request.client = request.user
 
         help_request.save()

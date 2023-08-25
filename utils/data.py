@@ -95,3 +95,12 @@ TOPICS = [
     ("DA", "Data analysis"),
     ("AC", "Academic Coaching/Online Tutor"),
 ]
+
+
+PRICE_PER_DAY = {
+    "1": 50,
+    "2": 40,
+    "3": 35,
+    "4": 30,
+    "5": 25,
+}

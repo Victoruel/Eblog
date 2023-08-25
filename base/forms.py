@@ -16,10 +16,13 @@ class HelpRequestForm(forms.ModelForm):
                 "class": "rounded"
             }),
             "pages": forms.NumberInput(attrs={
-                "class": "form-control"
+                "class": "form-control",
+                "min": "1"
             }),
             "days": forms.NumberInput(attrs={
-                "class": "form-control"
+                "class": "form-control",
+                "min": "1",
+                "max": "5"
             }),
             "description": forms.Textarea(attrs={
                 "class": "form-control",

@@ -1,223 +1,237 @@
 {% extends './base.html' %} {% block title %}Help{% endblock title %} 
+
 {% block content %}
 <h1 class="title text-white text-center">Calculate my price.</h1>
 
-<div
-	
-	style="card shadow bg-primary p-5 mt-5 mb-5"
->
-	<form method="post" id="helpRequestForm"  style="margin-left: 400px; margin-right: 400px" class=" my-3 calculator p-3 border rounded border-secondary bg-primary" >
+<div style="card shadow bg-primary p-5 mt-5 mb-5">
+	<form
+		method="post"
+		id="helpRequestForm"
+		style="margin-left: 400px; margin-right: 400px"
+		class="my-3 calculator p-3 border rounded border-secondary bg-primary"
+	>
 		{% csrf_token %} {{ form.as_p }}
 
-		<button type="button" id="getPriceBtn" class="btn btn-secondary mt-3" >Get price</button>
-		<button type="submit" class="btn btn-secondary mt-3" >Continue</button>
-		<p class="mt-4" ><strong>Price: </strong>$ <span id="spanElm">000</span></p>
+		<button type="button" id="getPriceBtn" class="btn btn-secondary mt-3">
+			Get price
+		</button>
+		<button type="submit" class="btn btn-secondary mt-3">Continue</button>
+		<p class="mt-4"><strong>Price: </strong>$ <span id="spanElm">000</span></p>
 	</form>
 </div>
 
 <!-- client review section -->
 <section class="testimonial">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <h3 class="text-center fw-bold">What's Client's Are Saying</h3>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-theme">
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write1.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-heading">
+					<h3 class="text-center fw-bold">What's Client's Are Saying</h3>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="owl-carousel owl-theme">
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write1.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-left"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                <span class="position">Chase</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
+							<span class="position">Chase</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write2.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-right"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write2.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
+							<span class="position">Denique</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write2.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-left"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                <span class="position">Denique</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
+							<span class="position">Rick</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write1.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-right"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write2.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
+							<span class="position">Howard</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write1.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-left"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                <span class="position">Rick</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
+							<span class="position">Mary</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-item">
+							<img src="./images/write1.jpg" alt="" />
+							<div class="qoute-icon">
+								<i class="fa fa-quote-right"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Perferendis esse dolores excepturi fuga, labore molestias est
+								veniam molestiae odio quasi necessitatibus neque animi atque,
+								soluta sequi possimus quaerat architecto repudiandae!
+							</p>
 
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write1.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
+							<span class="position">Clifford</span><br />
+							<ul class="stars">
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+								<li><i class="bx bxs-star"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- essay services begings -->
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h2 class="section-title text-center mb-5">
+				We deal with any Type of Academic Assignments
+			</h2>
+			<ul class="flex box">
+				<li class="size">Essay</li>
+				<li class="size">Dissertation</li>
+				<li class="size">Thesis Writing</li>
+				<li class="size">Concept Papers</li>
+				<li class="size">Proposals</li>
+				<li class="size">Business Plans</li>
+				<li class="size">Academic Coaching</li>
+				<li class="size">Report writing</li>
+				<li class="size">Assessment writing</li>
+				<li class="size">Research paper</li>
+				<li class="size">Book/movie review</li>
+				<li class="size">Creative writing</li>
+				<li class="size">Case Study</li>
+				<li class="size">Article Review</li>
+				<li class="size">Coursework</li>
+				<li class="size">Presentations</li>
+				<li class="size">Speech</li>
+				<li class="size">Term paper</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- counter section -->
+<div class="container-fluid p-3 mt-3 mb-3">
+	<h2 class="text-center">We have assisted Thousands of Students</h2>
+	<div class="row gy-4 mt-3" data-aos="fade-up" style="background-color: linen">
+		<div class="col-md-3">
+			<i class="icon-trophy h1"></i>
+			<h1 class="mt-3 mb-2">1200+</h1>
+			<p>satisfied cutomers</p>
+		</div>
+		<div class="col-md-3">
+			<i class="icon-camera h1"></i>
+			<h1 class="mt-3 mb-2">100</h1>
+			<p>professional Writers</p>
+		</div>
+		<div class="col-md-3">
+			<i class="icon-happy h1"></i>
+			<h1 class="mt-3 mb-2">15600+</h1>
+			<p>Completed Assignments</p>
+		</div>
+		<div class="col-md-3">
+			<i class="icon-paintbrush h1"></i>
+			<h1 class="mt-3 mb-2">50</h1>
+			<p>Topics covered</p>
+		</div>
+	</div>
+</div>
 
-                <span class="position">Howard</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write1.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-left"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
-
-                <span class="position">Mary</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-item">
-                <img src="./images/write1.jpg" alt="">
-                <div class="qoute-icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis esse dolores excepturi fuga,
-                  labore molestias est veniam molestiae odio quasi necessitatibus neque animi atque, soluta sequi
-                  possimus quaerat architecto repudiandae!</p>
-
-                <span class="position">Clifford</span><br>
-                <ul class="stars">
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-                  <li><i class='bx bxs-star'></i></li>
-
-                </ul>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </section>
-   <!-- essay services begings -->
-   <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2 class="section-title text-center mb-5">We deal with any Type of Academic Assignments</h2>
-        <ul class="flex box">
-          <li class="size">Essay</li>
-          <li class="size">Dissertation</li>
-          <li class="size">Thesis Writing</li>
-          <li class="size">Concept Papers</li>
-          <li class="size">Proposals</li>
-          <li class="size">Business Plans</li>
-          <li class="size">Academic Coaching</li>
-          <li class="size">Report writing</li>
-          <li class="size">Assessment writing</li>
-          <li class="size">Research paper</li>
-          <li class="size">Book/movie review</li>
-          <li class="size">Creative writing</li>
-          <li class="size">Case Study</li>
-          <li class="size">Article Review</li>
-          <li class="size">Coursework</li>
-          <li class="size">Presentations</li>
-          <li class="size">Speech</li>
-          <li class="size">Term paper</li>
-
-        </ul>
-      </div>
-    </div>
-  </div>
-    <!-- counter section -->
-    <div class="container-fluid p-3 mt-3 mb-3">
-      <h2 class="text-center"> We have assisted Thousands of Students</h2>
-      <div class="row gy-4 mt-3" data-aos="fade-up" style="background-color: linen;">
-        <div class="col-md-3">
-          <i class="icon-trophy h1"></i>
-          <h1 class="mt-3 mb-2">1200+</h1>
-          <p>satisfied cutomers</p>
-        </div>
-        <div class="col-md-3">
-          <i class="icon-camera h1"></i>
-          <h1 class="mt-3 mb-2">100</h1>
-          <p>professional Writers</p>
-        </div>
-        <div class="col-md-3">
-          <i class="icon-happy h1"></i>
-          <h1 class="mt-3 mb-2">15600+</h1>
-          <p>Completed Assignments</p>
-        </div>
-        <div class="col-md-3">
-          <i class="icon-paintbrush h1"></i>
-          <h1 class="mt-3 mb-2">50</h1>
-          <p>Topics covered</p>
-        </div>
-  
-      </div>
-    </div>
-
-{% endblock content %}
-{% block script %}
+{% endblock content %} {% block script %}
 <script>
 	const form = document.querySelector("#helpRequestForm");
 	const spanElm = document.querySelector("#spanElm");
@@ -258,13 +272,27 @@
 		["P", 60],
 	]);
 
+	const pricePerDay = new Map([
+		["1", 50],
+		["2", 40],
+		["3", 35],
+		["4", 30],
+		["5", 25],
+	]);
+
 	getPriceBtn.onclick = () => {
-		const price =
-			((study_level_pricing.get(form.study_level.value) +
-				paper_type_pricing.get(form.paper_type.value)) *
-				1) /
-			(form.days.value / 2);
-		spanElm.innerHTML = price;
+
+    if(form.days.value > 5) {
+      alert("Please select a number of days lower than 5!")
+    } else {
+
+      const price =
+        study_level_pricing.get(form.study_level.value) +
+        paper_type_pricing.get(form.paper_type.value) +
+        pricePerDay.get(form.days.value);
+      spanElm.innerHTML = price;
+    }
+
 	};
 </script>
 {% endblock script %}
