@@ -15,10 +15,10 @@
       {% for blog in blogs %}
       <li>
           <h3></h3>
-          <p><strong>Topic: </strong>{{blog.get_topic_display}}</p>
+          {% comment %} <p><strong>Topic: </strong>{{blog.get_topic_display}}</p> {% endcomment %}
           <p><strong>Author: </strong>{{blog.author.username}}</p>
           <p><strong>Upload date: </strong>{{blog.upload_date}}</p>
-          <p><strong>File: </strong>        <a href="{% url "blog:blog-detail" blog.slug %}">{{blog.file}}</a>
+          {% comment %} <p><strong>File: </strong>        <a href="{% url "blog:blog-detail" blog.slug %}">{{blog.file}}</a> {% endcomment %}
           </p>
       </li>
 
@@ -40,9 +40,9 @@
                     </p> -->
                     <h4 class="card-title mb-3">$<strong>79</strong></h4>
                   </div>
-                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#tours">
+                  <a href="{% url 'blog:blog-detail' blog.slug %}" class="btn btn-outline-primary" >
                     Read More
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
