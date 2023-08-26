@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.contrib import messages
 
 from .forms import PaperForm
@@ -30,7 +31,17 @@ def create_blog(request):
 # Blog_list view
 @login_required()
 def blog_list(request):
-    blogs = Paper.objects.all()
+    # blogs = Paper.objects.all()
+
+    # Search functionality
+    q = request.GET.get("q") if request.GET.get("q") != None else ""
+
+    blogs = Paper.objects.filter(
+        Q(title__icontains=q) |
+        Q(topic__icontains=q) |
+        Q(author__username__icontains=q)
+    )
+
 
     context = {
         "blogs": blogs
@@ -54,7 +65,7 @@ def blog_detail(request, blog_slug):
 
 
 def category_detail(request, topic):
-    blogs = Paper.objects.filter(topic=topic)
+    blogs = Paper.objects.filter(topic=topic)    
 
     print(blogs)
 

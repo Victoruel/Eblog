@@ -1,20 +1,30 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 
 from .forms import HelpRequestForm
 from .models import HelpRequest
-from utils.data import TOPICS
-from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING, PRICE_PER_DAY
+from blog.models import Paper
+from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING, PRICE_PER_DAY, TOPICS
 
 
 def index(request):
-    topic_names= []
+    topic_names = []
     topic_codes = []
 
     for item in TOPICS:
         topic_codes.append(item[0])
         topic_names.append(item[1])
+
+    # Search functionality
+    q = request.GET.get("q") if request.GET.get("q") != None else ""
+
+    blogs = Paper.objects.filter(
+        Q(title__icontains=q) |
+        Q(topic__icontains=q) |
+        Q(author__username__icontains=q)
+    )
 
     context = {
         "topic_names": topic_names,
@@ -42,10 +52,11 @@ def price_calculator(request):
 
         help_request.save()
 
-        messages.success(request, "Your help request has been sent successfully.", extra_tags="success")
+        messages.success(
+            request, "Your help request has been sent successfully.", extra_tags="success")
 
         form = HelpRequestForm()
-    
+
     context = {"form": form}
 
     return render(request, "base/calculator.html", context)
