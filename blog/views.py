@@ -18,12 +18,9 @@ def create_blog(request):
 
         paper.save()
 
-        messages.success(request, "Blog created successfully.", extra_tags="success")
+        messages.success(request, "Blog created successfully.",
+                         extra_tags="success")
         form = PaperForm()
-
-    # else:
-    #     messages.error(
-    #         request, "Sorry, blog not created! Please enter valid inputs", extra_tags="danger")
 
     context = {"form": form}
 
@@ -54,3 +51,15 @@ def blog_detail(request, blog_slug):
     }
 
     return render(request, "blog/blog_detail.html", context)
+
+
+def category_detail(request, topic):
+    blogs = Paper.objects.filter(topic=topic)
+
+    print(blogs)
+
+    context = {
+        "blogs": blogs.all(),
+    }
+
+    return render(request, "blog/blog_list.html", context)

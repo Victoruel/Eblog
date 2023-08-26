@@ -7,6 +7,12 @@
 {% block content %}
 <h1>Welcome Home</h1>
 
+<div>
+  {% for code, topic in topics %}
+    <a href="{% url 'blog:category-detail' code %}">{{topic}}</a><br>
+  {% endfor %}
+</div>
+
 
 <!-- hero section -->
 <div class="container-fluid p-5 mt-5 mb-5">

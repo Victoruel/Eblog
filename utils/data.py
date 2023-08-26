@@ -88,12 +88,12 @@ TOPICS = [
     ("BM", "Business management"),
     ("HR", "Human Resource"),
     ("SC", "Supply chain & logistics"),
-    ("TD", "Thesis/Dissertations"),
+    ("TS", "Thesis"),
     ("CP", "Concept Papers"),
     ("BP", "Business Plans"),
     ("SM", "Strategic management"),
     ("DA", "Data analysis"),
-    ("AC", "Academic Coaching/Online Tutor"),
+    ("OT", "Online Tutor"),
 ]
 
 

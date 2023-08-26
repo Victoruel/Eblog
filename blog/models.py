@@ -9,7 +9,7 @@ class Paper(models.Model):
     file = models.FileField(upload_to="blogs/")
     thumbnail = models.FileField(upload_to="thumbnails/")
     topic = models.CharField(max_length=100, choices=TOPICS)
-    # price = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
+    # price = modelsP.DecimalField(max_digits=9, decimal_places=2, default=0.00)
     pages = models.IntegerField(default=1)
     slug = models.SlugField(max_length=100)
     upload_date = models.DateTimeField(auto_now_add=True)

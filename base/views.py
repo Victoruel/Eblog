@@ -4,11 +4,23 @@ from django.contrib import messages
 
 from .forms import HelpRequestForm
 from .models import HelpRequest
+from utils.data import TOPICS
 from utils.data import PAPER_TYPE_PRICING, STUDY_LEVEL_PRICING, PRICE_PER_DAY
 
 
 def index(request):
-    context = {}
+    topic_names= []
+    topic_codes = []
+
+    for item in TOPICS:
+        topic_codes.append(item[0])
+        topic_names.append(item[1])
+
+    context = {
+        "topic_names": topic_names,
+        "topic_codes": topic_codes,
+        "topics": TOPICS
+    }
 
     return render(request, "base/home.html", context)
 
@@ -33,10 +45,7 @@ def price_calculator(request):
         messages.success(request, "Your help request has been sent successfully.", extra_tags="success")
 
         form = HelpRequestForm()
-    # else:
-    #     messages.error(
-    #         request, "Sorry, invalid help request! Please revisit your inputs.", extra_tags="danger")
-
+    
     context = {"form": form}
 
     return render(request, "base/calculator.html", context)
