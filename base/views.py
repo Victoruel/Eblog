@@ -1,7 +1,7 @@
+import requests, json
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.db.models import Q
 
 from .forms import HelpRequestForm
 from .models import HelpRequest
@@ -17,18 +17,8 @@ def index(request):
         topic_codes.append(item[0])
         topic_names.append(item[1])
 
-    # Search functionality
-    q = request.GET.get("q") if request.GET.get("q") != None else ""
-
-    blogs = Paper.objects.filter(
-        Q(title__icontains=q) |
-        Q(topic__icontains=q) |
-        Q(author__username__icontains=q)
-    )
 
     context = {
-        "topic_names": topic_names,
-        "topic_codes": topic_codes,
         "topics": TOPICS
     }
 

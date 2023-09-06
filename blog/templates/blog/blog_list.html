@@ -4,26 +4,16 @@
 
 {% block content %}
 
-<a href="{% url 'blog:create-blog' %}">Create New Blog</a>
+<a href="{% url 'blog:create-blog' %}" class="btn btn-primary mt-3" >Create New Blog</a>
 
-<ol>
+<div class="d-flex flex-wrap gap-1 w-100 p-1 mb-3" >
 
     {% if blogs.count < 1 %}
       <h1>Coming soon</h1>
     {% else %}
 
       {% for blog in blogs %}
-      <li>
-          <h3></h3>
-          {% comment %} <p><strong>Topic: </strong>{{blog.get_topic_display}}</p> {% endcomment %}
-          <p><strong>Author: </strong>{{blog.author.username}}</p>
-          <p><strong>Upload date: </strong>{{blog.upload_date}}</p>
-          {% comment %} <p><strong>File: </strong>        <a href="{% url "blog:blog-detail" blog.slug %}">{{blog.file}}</a> {% endcomment %}
-          </p>
-      </li>
-
-      <div class="col-lg-4">
-          <div class="card">
+          <div class="card" style="width: 33%">
             <div class="row g-0">
               <div class="col-6 col-md-7">
                 <img src="./prac/dininftable.jpeg" class="card-img img-fluid rounded-start" alt="" />
@@ -31,14 +21,11 @@
               <div class="col-6 col-md-5">
                 <div class="card-body d-flex flex-column">
                   <div class="h-100">
-                    <h4 class="title">{{blog.title}}</h4>
+                    <h4 class="h4">{{blog.title}}</h4>
+                    <small class="badge bg-secondary rounded-pill" >By: @{{blog.author}}</small>
                     <h5 class="category">{{blog.get_topic_display}}</h5>
-                    <!-- <p class="descripion">
-                      Our bouquet of offerings are inspired by our customers
-                      lives and daily needs, and we are proudly Kenyan in our
-                      design, yet global in our technology.
-                    </p> -->
-                    <h4 class="card-title mb-3">$<strong>79</strong></h4>
+                    
+                    <a href="{% url 'payments:payments-page' blog.id %}" class="btn btn-success btn-sm mb-2">Buy $<strong>{{ blog.get_price }}</strong></a>
                   </div>
                   <a href="{% url 'blog:blog-detail' blog.slug %}" class="btn btn-outline-primary" >
                     Read More
@@ -47,97 +34,8 @@
               </div>
             </div>
           </div>
-        </div>
       {% endfor %}
     {% endif %}
-
-</ol>
+</div>
 
 {% endblock content %}
-
-<div class="container-fluid mt-5">
-    <div class="cream-bg">
-      <div class="container">
-        <div class="row g-5 justify-content-evenly">
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="row g-0">
-                <div class="col-6 col-md-7">
-                  <img src="./prac/dininftable.jpeg" class="card-img img-fluid rounded-start" alt="" />
-                </div>
-                <div class="col-6 col-md-5">
-                  <div class="card-body d-flex flex-column">
-                    <div class="h-100">
-                      <h4 class="title">health in ict</h4>
-                      <h5 class="category">health</h5>
-                      <!-- <p class="descripion">
-                        Our bouquet of offerings are inspired by our customers
-                        lives and daily needs, and we are proudly Kenyan in our
-                        design, yet global in our technology.
-                      </p> -->
-                      <h4 class="card-title mb-3">$<strong>79</strong></h4>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#tours">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="row g-0">
-                <div class="col-6 col-md-7">
-                  <img src="./prac/dininftable.jpeg" class="card-img img-fluid rounded-start" alt="" />
-                </div>
-                <div class="col-6 col-md-5">
-                  <div class="card-body d-flex flex-column">
-                    <div class="h-100">
-                      <h4 class="title">Health</h4>
-                      <h5 class="category">marketing</h5>
-                      <!-- <p class="descripion">
-                        Our bouquet of offerings are inspired by our customers
-                        lives and daily needs, and we are proudly Kenyan in our
-                        design, yet global in our technology.
-                      </p> -->
-                      <h4 class="card-title mb-3">$<strong>79</strong></h4>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#tours">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="row g-0">
-                <div class="col-6 col-md-7">
-                  <img src="./prac/dininftable.jpeg" class="card-img img-fluid rounded-start" alt="" />
-                </div>
-                <div class="col-6 col-md-5">
-                  <div class="card-body d-flex flex-column">
-                    <div class="h-100">
-                      <h4 class="title">reaearch analysis</h4>
-                      <h5 class="category">adventure</h5>
-                      <p class="descripion">
-                        Our bouquet of offerings are inspired by our customers
-                        lives and daily needs, and we are proudly Kenyan in our
-                        design, yet global in our technology.
-                      </p>
-                      <h4 class="card-title mb-3">$<strong>79</strong></h4>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#tours">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>

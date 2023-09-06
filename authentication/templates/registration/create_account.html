@@ -4,8 +4,25 @@
 {% block content %}
 <form action="#" method="post" class="mx-auto w-50 border">
 	<h4 class="text-center">Sign up</h4>
-	{% csrf_token %} {{form.as_p}}
+	{% csrf_token %}
 
+	{% if form.errors%}
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <ul>
+          {% for field, errors in form.errors.items %} {% for err in errors %}
+          <li>{{field}}: {{err}}</li>
+          {% endfor %} {% endfor %}
+        </ul>
+      </div>
+	{% endif %}  
+
+	{% for field in form %}
+		<div class="form-group">
+			<label for="{{field.label}}">{{ field.label }}</label>
+			{{field}}
+		</div>
+	{% endfor %}
 	<button type="submit" class="btn btn-primary mt-5">sign up</button>
 	<p>
 		Have an account?

@@ -3,11 +3,27 @@
 {% block title %}upload{% endblock title %}
 
 {% block content %}
-<form enctype="multipart/form-data" action="#" method="post">
+<form enctype="multipart/form-data" action="#" method="post" class="container-fluid my-4">
     {% csrf_token %}  
-    
-    {{form.as_p}}
 
-    <button type="submit">Upload</button>
+    {% if form.errors%}
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <ul>
+          {% for field, errors in form.errors.items %} {% for err in errors %}
+          <li>{{field}}: {{err}}</li>
+          {% endfor %} {% endfor %}
+        </ul>
+      </div>
+	{% endif %} 
+    
+    {% for field in form %}
+    <div class="form-group">
+        <label for="{{field.label}}">{{field.label}}</label>
+        {{field}}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary btn-sm mt-3" >Upload</button>
 </form>
 {% endblock content %}

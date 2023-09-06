@@ -18,16 +18,24 @@
 					<a class="nav-link" aria-current="page" href="/">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="/downloads">Downloads</a>
+					<a class="nav-link" href="/downloads">Downloads</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/help">Expert Help</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact.html">Create Account</a>
-				</li>
+
+				{% comment %} <li class="nav-item">
+					<a class="nav-link" href="{% url 'auth:create-account' %}"
+						>Create Account</a
+					>
+				</li> {% endcomment %}
 			</ul>
-			<form class="d-flex" role="search" method="get" action="{% url 'blog:blog-list' %}" >
+			<form
+				class="d-flex"
+				role="search"
+				method="get"
+				action="{% url 'blog:blog-list' %}"
+			>
 				<input
 					class="form-control me-2"
 					type="text"

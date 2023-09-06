@@ -7,9 +7,9 @@ from utils.data import TOPICS
 class Paper(models.Model):
     title = models.CharField(max_length=250)
     file = models.FileField(upload_to="blogs/")
-    thumbnail = models.FileField(upload_to="thumbnails/")
+    thumbnail = models.FileField(upload_to="thumbnails/", null=True, blank = True)
     topic = models.CharField(max_length=100, choices=TOPICS)
-    # price = modelsP.DecimalField(max_digits=9, decimal_places=2, default=0.00)
+    price = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
     pages = models.IntegerField(default=1)
     slug = models.SlugField(max_length=100)
     upload_date = models.DateTimeField(auto_now_add=True)
